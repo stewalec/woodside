@@ -32,19 +32,17 @@ Here is a custom `routes.yaml` file that works well with this theme:
 
 ```yaml
 routes:
+  /: home
 
 collections:
   /thinking/:
     permalink: /thinking/{slug}/
-    filter: primary-tag:hash-thinking
+    filter: tag:hash-thinking
     template: thinking
   /writing/:
     permalink: /writing/{slug}/
-    filter: primary-tag:hash-writing
+    filter: tag:hash-writing
     template: writing
-  /:
-    permalink: /{slug}/
-    template: index
 
 taxonomies:
   tag: /{slug}/
