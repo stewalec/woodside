@@ -1,0 +1,19 @@
+{{!< default}}
+{{#contentFor "collection"}}Writing{{/contentFor}}
+
+<header>
+    <h1>Writing</h1>
+    <p class="subtitle muted">Structured essays and ideas</p>
+</header>
+
+<ul class="posts">
+    {{#foreach posts}}
+        <li>
+            <time datetime="{{date format="YYYY-MM-DD"}}" class="muted">{{date format="DD MMMM YYYY"}}</time>
+            <a href="{{url}}">{{title}}</a>
+            {{#if custom_excerpt}}<p class="muted">{{custom_excerpt}}</p>{{/if}}
+        </li>
+    {{/foreach}}
+</ul>
+
+{{pagination}}

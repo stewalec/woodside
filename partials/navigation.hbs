@@ -1,0 +1,7 @@
+{{#foreach navigation}}
+    {{#if @last}}
+        <a href="{{url absolute="true"}}">{{label}}</a>
+    {{else}}
+        <a href="{{url absolute="true"}}">{{label}}</a> &middot;
+    {{/if}}
+{{/foreach}}

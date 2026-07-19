@@ -1,31 +1,28 @@
 {
-    "name": "zap",
-    "description": "An ultra-minimal theme for ghost",
-    "demo": "https://zap.ghost.io",
+    "name": "woodside",
+    "description": "A minimal and contemplative theme for Ghost",
+    "demo": "https://alecstewart.com",
     "version": "1.0.0",
     "packageManager": "pnpm@11.10.0+sha512.0b7f8b98060031904c017e3a41eb187a16d40eeb829b95c4f8cb03681761fc4ab53dd219115b9b447f4dce1a05a214764461e7d3703392a9f32f9511ce8c86c8",
     "engines": {
         "ghost": ">=5.0.0"
     },
     "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg"
-    },
     "scripts": {
-        "zip": "mkdir -p dist && bestzip dist/$npm_package_name.zip assets/* *.hbs package.json",
+        "zip": "mkdir -p dist && bestzip dist/$npm_package_name.zip assets/* partials/* *.hbs package.json",
         "pretest": "pnpm run zip",
         "test": "gscan ."
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Alec Stewart",
+        "email": "alec@alecstewart.com",
+        "url": "https://alecstewart.com"
     },
     "gpm": {
         "type": "theme",
         "categories": [
             "Minimal",
-            "Magazine"
+            "Contemplative"
         ]
     },
     "keywords": [
@@ -35,35 +32,15 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/zap.git"
+        "url": "https://github.com/stewalec/woodside.git"
     },
-    "bugs": "https://github.com/TryGhost/zap/issues",
-    "contributors": "https://github.com/TryGhost/zap/graphs/contributors",
+    "bugs": "https://github.com/stewalec/woodside/issues",
+    "contributors": "https://github.com/stewalec/woodside/graphs/contributors",
     "devDependencies": {
         "bestzip": "3.0.1",
         "gscan": "6.4.1"
     },
     "config": {
-        "posts_per_page": 15,
-        "image_sizes": {
-            "xxs": {
-                "width": 30
-            },
-            "xs": {
-                "width": 100
-            },
-            "s": {
-                "width": 300
-            },
-            "m": {
-                "width": 600
-            },
-            "l": {
-                "width": 1200
-            },
-            "xl": {
-                "width": 2000
-            }
-        }
+        "posts_per_page": 50
     }
 }

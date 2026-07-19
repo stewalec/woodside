@@ -1,17 +1,17 @@
-# Zap
+# Woodside
 
-Zap is a minimal, performance-focused theme for [Ghost](https://github.com/TryGhost/Ghost), built to demonstrate Ghost's baseline performance without the overhead of heavy images, scripts, or large assets.
+Woodside is a minimal, contemplative theme for [Ghost](https://github.com/TryGhost/Ghost), based on [TryGhost/Zap](https://github.com/TryGhost/Zap) and [Tufte CSS](https://github.com/edwardtufte/tufte-css/blob/gh-pages/tufte.css).
 
-**Demo: https://zap.ghost.io**
+**Demo: https://alecstewart.com**
 
 # Instructions
 
-1. [Download this theme](https://github.com/TryGhost/Zap/archive/main.zip)
+1. [Download this theme](https://github.com/stewalec/woodside/archive/main.zip)
 2. Log into Ghost, and go to the `Design` settings area to upload the zip file
 
 # Development
 
-Zap is intentionally small. You can edit the Handlebars templates in the theme root and the stylesheet in `/assets/screen.css`.
+Woodside is intentionally small. You can edit the Handlebars templates in the theme root and the stylesheet in `/assets/screen.css`.
 
 From the theme's root directory:
 
@@ -26,9 +26,41 @@ pnpm install
 pnpm test
 ```
 
+# Routes
+
+Here is a custom `routes.yaml` file that works well with this theme:
+
+```yaml
+routes:
+
+collections:
+  /thinking/:
+    permalink: /thinking/{slug}/
+    filter: primary-tag:hash-thinking
+    template: thinking
+  /writing/:
+    permalink: /writing/{slug}/
+    filter: primary-tag:hash-writing
+    template: writing
+  /:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /{slug}/
+  author: /author/{slug}/
+```
+
+# TODO
+
+- [ ] Comments UI styling
+- [ ] Tag page
+- [ ] Author page
+- [ ] Subscribe
+
 # Contribution
 
-If you're looking to contribute or raise an issue, head over to the [TryGhost/Zap](https://github.com/TryGhost/Zap) repository.
+If you're looking to contribute or raise an issue, head over to the [stewalec/woodside](https://github.com/stewalec/woodside) repository.
 
 # Copyright & License
 

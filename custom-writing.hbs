@@ -1,0 +1,18 @@
+{{!< default}}
+
+{{#post}}
+
+<header>
+    <p class="meta muted">
+        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+        {{#match (date updated_at format="YYYY-MM-DD") ">" (date published_at format="YYYY-MM-DD") }}
+            &middot; Updated <time datetime="{{date updated_at format="YYYY-MM-DD"}}">{{date updated_at format="DD MMMM YYYY"}}</time>
+        {{/match}}
+    </p>
+    <h1>{{title}}</h1>
+    {{#if custom_excerpt}}<p class="subtitle muted">{{custom_excerpt}}</p>{{/if}}
+</header>
+
+{{content}}
+
+{{/post}}

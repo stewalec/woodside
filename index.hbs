@@ -1,11 +1,11 @@
 {{!< default}}
 
-<div class="gh-container">
-    <div class="gh-postfeed">
-        {{#foreach posts visibility="all"}}
-        <a class="{{post_class}}" href="{{url}}">
-            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM, YYYY"}}</time> - <span>{{title}}</span>
-        </a>
-        {{/foreach}}
-    </div>
-</div>
+<ul class="posts">
+    {{#foreach posts visibility="all"}}
+    <li>
+        <time datetime="{{date format="YYYY-MM-DD"}}" class="muted">{{date format="DD MMMM YYYY"}}</time>
+        <a href="{{url}}">{{title}}</a>
+        {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{/if}}
+    </li>
+    {{/foreach}}
+</ul>

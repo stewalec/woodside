@@ -1,0 +1,47 @@
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    container_name: woodside-db
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: ghost
+      MYSQL_USER: ghost
+      MYSQL_PASSWORD: example
+    volumes:
+      - db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pexample"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  ghost:
+    image: ghost:6-alpine
+    restart: unless-stopped
+    container_name: woodside-ghost
+    ports:
+      - "2368:2368"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: development
+      url: http://localhost:2368
+      database__client: mysql
+      database__connection__host: db
+      database__connection__port: 3306
+      database__connection__database: ghost
+      database__connection__user: ghost
+      database__connection__password: example
+      security__staffDeviceVerification: false
+    volumes:
+      - ghost:/var/lib/ghost/content
+      - ./:/var/lib/ghost/content/themes/woodside
+      - /var/lib/ghost/content/themes/woodside/node_modules
+      - /var/lib/ghost/content/themes/woodside/.git
+
+volumes:
+  db:
+  ghost:

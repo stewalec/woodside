@@ -1,0 +1,18 @@
+{{!< default}}
+{{#contentFor "collection"}}Thinking{{/contentFor}}
+
+<header>
+    <h1>Thinking</h1>
+    <p class="subtitle muted">Ephemeral musings and notes</p>
+</header>
+
+<ul class="posts">
+    {{#foreach posts}}
+        <li>
+            <a href="{{url}}"><time datetime="{{date format="YYYY-MM-DD"}}" class="muted">{{date format="DD MMMM YYYY"}}</time></a>
+            {{content}}
+        </li>
+    {{/foreach}}
+</ul>
+
+{{pagination}}
