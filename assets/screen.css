@@ -418,6 +418,10 @@ span.email b {
     gap: 20px;
 }
 
+.home-template h1 {
+    margin-top: 1.5rem;
+}
+
 @media (max-width: 760px) {
     body {
         width: 84%;
