@@ -16,7 +16,7 @@
 
 /* Tufte CSS styles */
 html {
-    font-size: 15px;
+    font-size: 13.5px;
 }
 
 body {
@@ -500,6 +500,9 @@ span.email b {
 
 /* Adds dark mode */
 @media (prefers-color-scheme: dark) {
+    :root {
+        --ghost-accent-color: #788c83;
+    }
     body {
         background-color: var(--bg-dark);
         color: var(--font-dark);
