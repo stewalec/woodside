@@ -3,7 +3,7 @@
 {{#post}}
 
 <header>
-    {{#if @page.show_title_and_feature_image}}<h1>{{title}}</h1>{{/if}}
+    {{#if @page.show_title_and_feature_image}}<h1><a href="{{@site.url}}" class="title">{{title}}</a></h1>{{/if}}
     {{#if custom_excerpt}}<p class="subtitle muted">{{custom_excerpt}}</p>{{/if}}
 </header>
 
