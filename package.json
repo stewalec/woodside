@@ -3,7 +3,7 @@
     "description": "A minimal and contemplative theme for Ghost",
     "demo": "https://alecstewart.com",
     "version": "1.0.1",
-    "packageManager": "pnpm@11.13.1+sha512.b2fc7683b8a6525414e7d13e1ba28caaddde96bf66ec540bfaeb7e702b81f3e0be4d1f295edf7f9fe0396740a8dce4509c582ddf79891f4543fea32d37645f25",
+    "packageManager": "pnpm@11.24.0+sha512.bd27e345e976dcb0be0b7a1228217b049a817e21b1f355c90dbe7dc46671895a8bc1e6d06c24554505ea93ea0b45f489a27ec1bfbc8de6a9659fca0f16fa0000",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -37,7 +37,7 @@
     "bugs": "https://github.com/stewalec/woodside/issues",
     "contributors": "https://github.com/stewalec/woodside/graphs/contributors",
     "devDependencies": {
-        "bestzip": "3.0.1",
+        "bestzip": "3.0.2",
         "gscan": "6.4.2"
     },
     "config": {
