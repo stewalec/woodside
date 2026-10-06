@@ -8,7 +8,7 @@
 {{#get "posts" filter="tag:now" limit="1"}}
     {{#foreach posts}}
         {{content}}
-        <p class="meta muted" style="text-align:center;margin-top:3rem;">Last updated {{date updated_at format="YYYY-MM-DD HH:MM z"}}</p>
+        <p class="meta muted" style="text-align:center;margin-top:3rem;">Last updated {{date updated_at format="YYYY-MM-DD HH:mm z"}}</p>
     {{else}}
         <li>Nothing posted yet.</li>
     {{/foreach}}
