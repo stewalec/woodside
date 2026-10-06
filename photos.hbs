@@ -1,0 +1,22 @@
+{{!< default}}
+{{#contentFor "meta"}}
+    Photos{{#if pagination.page}}{{#match pagination.page ">" 1}} (Page {{pagination.page}}){{/match}}{{/if}} - {{@site.title}}
+{{/contentFor}}
+
+<header>
+    <h1><a href="{{@site.url}}" class="title">Photos</a></h1>
+</header>
+
+{{#get "posts" filter="tag:hash-photo" limit="all"}}
+<ul class="posts">
+    {{#foreach posts}}
+        <li>
+            <a href="{{url}}"><time datetime="{{date format="YYYY-MM-DD"}}" class="muted">{{date format="DD MMMM YYYY"}}</time></a>
+            {{content}}
+        </li>
+    {{else}}
+        <li>Nothing posted yet.</li>
+    {{/foreach}}
+</ul>
+{{pagination}}
+{{/get}}

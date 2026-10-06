@@ -33,19 +33,28 @@ Here is a custom `routes.yaml` file that works well with this theme:
 ```yaml
 routes:
   /: home
+  /bookmarks/:
+    template: bookmarks
+    filter: tag:hash-bookmark
+  /photos/:
+    template: photos
+    filter: tag:hash-photo
 
 collections:
-  /thinking/:
-    permalink: /thinking/{slug}/
-    filter: tag:hash-thinking
-    template: thinking
+  /notes/:
+    permalink: /notes/{slug}/
+    filter: tag:hash-note
+    template: notes
   /writing/:
     permalink: /writing/{slug}/
     filter: tag:hash-writing
     template: writing
+  /:
+    permalink: /{slug}/
+    template: index
 
 taxonomies:
-  tag: /{slug}/
+  tag: /tag/{slug}/
   author: /author/{slug}/
 ```
 

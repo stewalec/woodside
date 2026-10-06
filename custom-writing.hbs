@@ -8,8 +8,14 @@
         {{#match (date updated_at format="YYYY-MM-DD") ">" (date published_at format="YYYY-MM-DD") }}
             &middot; Updated <time datetime="{{date updated_at format="YYYY-MM-DD"}}">{{date updated_at format="DD MMMM YYYY"}}</time>
         {{/match}}
+        {{#if tags}}
+            &middot;
+            {{#foreach tags}}
+                #<a href="{{url}}">{{name}}</a>
+            {{/foreach}}
+        {{/if}}
     </p>
-    <h1>{{title}}</h1>
+    <h1><a href="/writing/" class="title">{{title}}</a></h1>
     {{#if custom_excerpt}}<p class="subtitle muted">{{custom_excerpt}}</p>{{/if}}
 </header>
 

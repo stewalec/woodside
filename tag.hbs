@@ -1,11 +1,9 @@
 {{!< default}}
-{{#contentFor "collection"}}Writing{{/contentFor}}
 
 <header>
-    <h1><a href="{{@site.url}}" class="title">Writing</a></h1>
-    <p class="subtitle muted">
-        Structured thoughts and essays. Shortform posts are over in <a href="/notes/">notes</a>.
-    </p>
+    {{#tag}}
+    <h1><a href="{{@site.url}}" class="title">Tag: {{name}}</a></h1>
+    {{/tag}}
 </header>
 
 <ul class="posts">

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>
+        {{#block "meta"}}
         {{#is "post, page"}}{{meta_title}}{{/is}}
         {{#is "tag"}}{{tag.name}} Archive{{/is}}
         {{#if pagination.page}}
@@ -16,6 +17,7 @@
             {{/match}}
         {{/if}}
         {{{block "error"}}} - {{@site.title}}
+        {{/block}}
     </title>
     {{ghost_head}}
 

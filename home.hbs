@@ -13,15 +13,53 @@
 </head>
 <body class="{{body_class}}">
 <article>
-    <section>
-        <h1>{{@site.title}}</h1>
-        <p class="subtitle muted">{{@site.description}}</p>
+
+    <section class="hero">
+        <h1>Hi, I'm <a href="/about/">Alec</a>.</h1>
+        <p>I'm curious about humanity, technology, and the space in between.</p>
+        <p>
+            I <a href="/writing/">write</a> and <a href="/notes/">ramble</a> into the digital aether.
+            Check out what I am doing <a href="/now/">now</a>,
+            or <a href="mailto:%61%6c%65%63%40%61%6c%65%63%73%74%65%77%61%72%74%2e%63%6f%6d">drop me a line</a>. I'd love that.
+        </p>
+        <p>Interested in <a href="/more/">more</a>?</p>
     </section>
 
     <section>
-        <h2><a href="/now/">Now</a></h2>
-        <h2><a href="/writing/">Writing</a></h2>
-        <h2><a href="/thinking/">Thinking</a></h2>
+        <h2>Recent Writing</h2>
+        <ul class="posts">
+        {{#get "posts" filter="tag:hash-writing" limit="3" as |writingPosts|}}
+            {{#foreach writingPosts}}
+                <li><a href="{{url}}">{{title}}</a></li>
+            {{else}}
+                <li>Nothing posted yet.</li>
+            {{/foreach}}
+        {{/get}}
+        </ul>
+    </section>
+
+    <section>
+        <h2>Recent Notes</h2>
+        <ul class="posts notes">
+        {{#get "posts" filter="tag:hash-note" limit="3" as |notesPosts|}}
+            {{#foreach notesPosts}}
+                <li>
+                    <a href="{{url}}"><time datetime="{{date format="YYYY-MM-DD"}}" class="muted">{{date format="DD MMMM YYYY"}}</time></a>
+                    {{content}}
+                </li>
+            {{else}}
+                <li>Nothing posted yet.</li>
+            {{/foreach}}
+        {{/get}}
+        </ul>
+    </section>
+
+    <section>
+        <footer class="muted">
+            {{navigation}}
+            <br>
+            {{> "footer"}}
+        </footer>
     </section>
 
 </article>

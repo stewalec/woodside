@@ -1,0 +1,17 @@
+{{!< default}}
+
+<header>
+    <h1><a href="{{@site.url}}" class="title">Now</a></h1>
+    <p class="subtitle muted">This is a <a href="https://nownownow.com">now</a> page, inspired by Derek Sivers. View all <a href="/tag/now/">now updates</a>.</p>
+</header>
+
+{{#get "posts" filter="tag:now" limit="1"}}
+    {{#foreach posts}}
+        <h2>{{title}}</h2>
+        <br>
+        {{content}}
+        <p class="meta muted" style="text-align:center;margin-top:3rem;">Last updated {{date updated_at format="YYYY-MM-DD HH:MM z"}}</p>
+    {{else}}
+        <li>Nothing posted yet.</li>
+    {{/foreach}}
+{{/get}}

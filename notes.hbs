@@ -1,0 +1,23 @@
+{{!< default}}
+{{#contentFor "collection"}}Notes{{/contentFor}}
+
+<header>
+    <h1><a href="{{@site.url}}" class="title">Notes</a></h1>
+    <p class="subtitle muted">
+        All shortform thoughts, musings, and happenings.
+        Filter by <a href="/bookmarks/">bookmarks</a>, <a href="/photos/">photos</a>, or <a href="/tag/now/">now updates</a>.
+    </p>
+</header>
+
+<ul class="posts notes">
+    {{#foreach posts}}
+        <li>
+            <a href="{{url}}"><time datetime="{{date format="YYYY-MM-DD"}}" class="muted">{{date format="DD MMMM YYYY"}}</time></a>
+            {{content}}
+        </li>
+    {{else}}
+        <li>Nothing posted yet.</li>
+    {{/foreach}}
+</ul>
+
+{{pagination}}

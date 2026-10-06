@@ -77,7 +77,7 @@ p.subtitle {
     font-style: italic;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     display: block;
     line-height: 1;
 }
@@ -140,11 +140,18 @@ div.epigraph > blockquote > footer > cite {
 
 blockquote {
     font-size: 1.4rem;
+    border-left: 3px solid var(--muted-light);
+    padding-left: 1.5rem;
 }
 
 blockquote p {
     width: 55%;
     margin-right: 40px;
+    font-style: italic;
+}
+
+.posts blockquote p {
+    width: unset;
 }
 
 blockquote footer {
@@ -376,16 +383,22 @@ footer {
     list-style: none;
 }
 
-.posts li {
+.posts.notes > li:not(:last-child) {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--muted-light);
+}
+
+.posts > li {
     margin-bottom: 1rem;
 }
 
-.posts li > time {
+.posts > li time {
     display: block;
     margin: 0;
 }
 
-.posts li > p {
+.posts > li p {
     margin-top: 0;
 }
 
@@ -422,9 +435,27 @@ span.email b {
     margin-top: 1.5rem;
 }
 
+.home-template .hero p {
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 1.25;
+}
+
 a.title {
     color: inherit;
     text-decoration: none;
+}
+
+a:not(
+    [href^="#"],
+    [href^="/"],
+    [href^="mailto"],
+    [href*="localhost"],
+    [href*="alecstewart.com"]
+)::after {
+    content: "\00a0\2197";
+    vertical-align: super;
+    line-height: 0;
 }
 
 @media (max-width: 760px) {
@@ -518,4 +549,6 @@ a.title {
     }
     .muted, a.muted { color: var(--muted-dark); }
     hr::after { border-top: 1px solid var(--muted-dark); }
+    blockquote { border-left: 3px solid var(--muted-dark); }
+    .posts.notes > li:not(:last-child) { border-bottom: 1px solid var(--muted-dark); }
 }
