@@ -7,8 +7,6 @@
 
 {{#get "posts" filter="tag:now" limit="1"}}
     {{#foreach posts}}
-        <h2>{{title}}</h2>
-        <br>
         {{content}}
         <p class="meta muted" style="text-align:center;margin-top:3rem;">Last updated {{date updated_at format="YYYY-MM-DD HH:MM z"}}</p>
     {{else}}
