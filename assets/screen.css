@@ -471,6 +471,10 @@ figure.kg-card.kg-image-card.kg-card-hascaption figcaption {
     color: var(--muted-light)
 }
 
+.posts.notes .kg-card {
+    margin: auto;
+}
+
 @media (max-width: 760px) {
     body {
         width: 84%;
