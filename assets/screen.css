@@ -453,9 +453,22 @@ a:not(
     [href*="localhost"],
     [href*="alecstewart.com"]
 )::after {
-    content: "\00a0\2197";
+    content: "\00a0\2197\FE0E";
     vertical-align: super;
     line-height: 0;
+}
+
+figure.kg-card.kg-image-card img {
+    display: block;
+    margin: auto;
+}
+
+figure.kg-card.kg-image-card.kg-card-hascaption figcaption {
+    float: none;
+    clear: both;
+    max-width: unset;
+    text-align: center;
+    color: var(--muted-light)
 }
 
 @media (max-width: 760px) {
@@ -547,7 +560,9 @@ a:not(
         background-color: var(--bg-dark);
         color: var(--font-dark);
     }
-    .muted, a.muted { color: var(--muted-dark); }
+    .muted, a.muted, .kg-card-hascaption figcaption {
+        color: var(--muted-dark);
+    }
     hr::after { border-top: 1px solid var(--muted-dark); }
     blockquote { border-left: 3px solid var(--muted-dark); }
     .posts.notes > li:not(:last-child) { border-bottom: 1px solid var(--muted-dark); }
