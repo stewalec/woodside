@@ -110,10 +110,6 @@ p {
     vertical-align: baseline;
 }
 
-ul {
-    padding-left: 2.1em;
-}
-
 sup {
     line-height: 0;
 }
@@ -175,7 +171,7 @@ section > dl,
 section > ol,
 section > ul {
     width: 50%;
-    -webkit-padding-start: 5%;
+    padding-inline-start: 2em;
 }
 
 dt:not(:first-child),
@@ -457,10 +453,10 @@ a:not(
     [href*="localhost"],
     [href*="alecstewart.com"]
 )::after {
-    content: "\00a0\2197\FE0E";
+    content: "\00a0\2197";
+    font-family: sans-serif;
     vertical-align: super;
     line-height: 1rem;
-    font-size: 0.8em;
 }
 
 figure.kg-card.kg-image-card img {
