@@ -453,8 +453,8 @@ a:not(
     [href*="localhost"],
     [href*="alecstewart.com"]
 )::after {
-    content: "\00a0\2197";
-    font-family: sans-serif;
+    content: "\002002\2197\fe0e";
+    font-family: monospace;
     vertical-align: super;
     line-height: 1rem;
 }
