@@ -110,6 +110,10 @@ p {
     vertical-align: baseline;
 }
 
+ul {
+    padding-left: 2.1em;
+}
+
 sup {
     line-height: 0;
 }
@@ -188,7 +192,7 @@ figure {
     max-width: 55%;
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
-    margin: 0 0 3em 0;
+    margin: 3em 0;
 }
 
 figcaption {
@@ -455,7 +459,8 @@ a:not(
 )::after {
     content: "\00a0\2197\FE0E";
     vertical-align: super;
-    line-height: 0;
+    line-height: 1rem;
+    font-size: 0.8em;
 }
 
 figure.kg-card.kg-image-card img {
@@ -472,7 +477,7 @@ figure.kg-card.kg-image-card.kg-card-hascaption figcaption {
 }
 
 .posts.notes .kg-card {
-    margin: auto;
+    margin: 3rem auto;
 }
 
 @media (max-width: 760px) {
