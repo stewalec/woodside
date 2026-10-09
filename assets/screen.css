@@ -300,6 +300,10 @@ code, pre > code {
     font-size: 1.0rem;
     line-height: 1.42;
     -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
+    background: var(--font-dark);
+    border: 1px solid var(--muted-light);
+    border-radius: 2px;
+    padding: .4rem .4rem .2rem;
 }
 
 .sans > code {
@@ -573,4 +577,8 @@ figure.kg-card.kg-image-card.kg-card-hascaption figcaption {
     hr::after { border-top: 1px solid var(--muted-dark); }
     blockquote { border-left: 3px solid var(--muted-dark); }
     .posts.notes > li:not(:last-child) { border-bottom: 1px solid var(--muted-dark); }
+    code, pre > code {
+        background: var(--font-light);
+        border: 1px solid var(--muted-dark);
+    }
 }

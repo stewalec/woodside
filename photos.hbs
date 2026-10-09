@@ -8,7 +8,7 @@
 </header>
 
 {{#get "posts" filter="tag:hash-photo" limit="all"}}
-<ul class="posts">
+<ul class="posts notes">
     {{#foreach posts}}
         <li>
             <a href="{{url}}"><time datetime="{{date format="YYYY-MM-DD"}}" class="muted">{{date format="DD MMMM YYYY"}}</time></a>
